@@ -119,11 +119,11 @@ const removeAnimal = async (res, id) => {
 const validateAnimal = (animal) => {
     const schema = Joi.object({
         _id: Joi.allow(""),
-        name: Joi.string().min(2).max(50).required(),
-        description: Joi.string().min(5).max(500).required(),
-        gender: Joi.string().min(4).max(6).required(),
-        breed: Joi.string().min(2).max(50).required(),
-        age: Joi.number().integer().min(0).max(30).required(),
+        name: Joi.string().min(2).max(100).required(),
+        description: Joi.string().min(5).max(1000).required(),
+        gender: Joi.string().min(4).max(10).required(),
+        breed: Joi.string().min(2).max(100).required(),
+        age: Joi.number().integer().min(0).max(50).required(),
         personality: Joi.allow(""),
     });
 
