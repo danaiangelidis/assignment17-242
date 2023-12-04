@@ -14,7 +14,7 @@ mongoose.connect(
     "mongodb+srv://angelidisdanai:ufkBvXlteDvPQKpT@assignment17.fdmsu3p.mongodb.net/?retryWrites=true&w=majority"
   )
   .then(() => console.log("Connected to MongoDB!"))
-  .catch((err) => console.error("Could not connect to MongoDB...", err));
+  .catch((error) => console.error("Could not connect to MongoDB...", error));
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
@@ -25,6 +25,7 @@ app.get("/", (req, res) => {
 });
 
 const animalSchema = new mongoose.Schema ({
+    _id: mongoose.SchemaTypes.ObjectId,
     name: String,
     description: String,
     img: String,
