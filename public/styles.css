@@ -57,6 +57,27 @@ body {
     background-color: var(--form2);
 }
 
+#are-you-sure {
+    padding: 10px;
+    background: var(--from1);
+    width: 100%;
+}
+
+#ays-yes,
+#ays-no {
+    background-color: var(--form2);
+    padding: 5px 20px;
+    font-weight: bold;
+    font-size: small;
+    color: white;
+    display: inline-block;
+}
+
+#ays-yes:hover,
+#ays-no:hover {
+    background-color: var(--dis2);
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -75,7 +96,8 @@ a {
     width: 90%;
 }
 
-#animal-details-box {
+#animal-details-box,
+#form-box {
     padding: 10px;
     background: var(--from1);
     width: 100%;
@@ -83,12 +105,6 @@ a {
 
 #animal-details h2 {
     text-align: center;
-}
-
-#form-box {
-    padding: 10px;
-    background: var(--from1);
-    width: 100%;
 }
 
 /* Form */
@@ -233,6 +249,10 @@ input::file-selector-button:hover {
     #animal-details-box {
         margin: 20px 7%;
         width: 70%;
+    }
+    #are-you-sure {
+        margin: 80px 15%;
+        width: 40%;
     }
     #personality label {
         width: 360px;

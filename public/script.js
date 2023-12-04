@@ -91,13 +91,32 @@ const displayDetails = (animal) => {
 
     dLink.onclick = (e) => {
         e.preventDefault();
-        deleteAnimal(animal);
-        document.getElementById("animal-details-box").classList.add("hidden");
+        areYouSure(animal);
     };
 
     resetForm();
     populateEditForm(animal);
 };
+
+const areYouSure = (animal) => {
+    const ays = document.getElementById("are-you-sure")
+    ays.classList.remove("hidden");
+
+    const msg = document.getElementById("msg");
+    msg.innerHTML = `Are you sure you want to delete ${animal.name} from our system?`
+
+    document.getElementById("ays-yes").onclick = () => {
+        document.getElementById("are-you-sure").classList.add("hidden");
+        document.getElementById("animal-details-box").classList.add("hidden");
+        msg.innerHTML = "";
+        deleteAnimal(animal);
+    };
+    
+    document.getElementById("ays-no").onclick = () => {
+        msg.innerHTML = "";
+        document.getElementById("are-you-sure").classList.add("hidden");
+    };
+}
 
 const deleteAnimal = async(animal) => {
     let response = await fetch(`/api/animals/${animal._id}`, {
@@ -222,6 +241,10 @@ window.onload = () => {
 
     document.getElementById("close-form").onclick = () => {
         document.getElementById("form-box").classList.add("hidden");
+    };
+
+    document.getElementById("close-ays").onclick = () => {
+        document.getElementById("are-you-sure").classList.add("hidden");
     };
 
     document.getElementById("add-trait").onclick = addPersonality;
