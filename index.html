@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 17</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <header id="main-header">
+            <h1>Little Paws Animal Shelter</h1>
+        </header>
+        <main id="main-content">
+            <h1>Our Animals</h1>
+            <div id="animals" class="flex-container"></div>
+            <a id="add-animal">Add a friend to our system!</a>
+            <div id="animal-details-box" class="hidden modal">
+                <span id="close-animal" class="close">&times;</span>
+                <div id="animal-details"></div>
+            </div>
+            <div id="form-box" class="hidden modal">
+                <span id="close-form" class="close">&times;</span>
+                <h3 id="title"></h3>
+                <form id="animal-form" method="post">
+                    <input type="hidden" name="_id" value="-1" />
+                    <p>
+                        <label for="name">Animal Name:</label>
+                        <input type="text" id="name" name="name" autocomplete="Name" placeholder="Full name" required>
+                    </p>
+                    <p>
+                        <label for="description">Description:</label>
+                        <textarea type="text" id="description" name="description" placeholder="Please provide a detailed description of our new friend!" required></textarea>
+                    </p>
+                    <p>
+                        <label for="gender">Gender:</label>
+                        <input type="text" id="gender" name="gender" placeholder="Male/Female" required>
+                    </p>
+                    <p>
+                        <label for="breed">Breed:</label>
+                        <input type="text" id="breed" name="breed" placeholder="If unknown, enter 'Mix'." required>
+                    </p>
+                    <p>
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" min="0" placeholder="If less than a year old, enter 0." required>
+                    </p>
+                    <p>
+                        <label for="img">Upload Image:</label>
+                        <input type="file" id="img" name="img" required>
+                    </p>
+        
+                    <p id="personality">
+                        <label>Personality:</label>
+                        <a href="#" id="add-trait">+ Trait</a>
+                        <section id="trait-boxes"></section>
+                    </p>
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
