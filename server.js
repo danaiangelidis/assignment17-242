@@ -25,7 +25,6 @@ app.get("/", (req, res) => {
 });
 
 const animalSchema = new mongoose.Schema ({
-    _id: mongoose.SchemaTypes.ObjectId,
     name: String,
     description: String,
     img: String,
